@@ -1,0 +1,11 @@
+footer {
+  background-color: #05315d;
+  color: #fff;
+
+}
+
+@media (min-width: 768px) {
+  footer {
+    text-align: left;
+  }
+}

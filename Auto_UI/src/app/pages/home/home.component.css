@@ -1,0 +1,89 @@
+.banner {
+  /* The image used */
+  background-image: url('../../../assets/img/Frame2.png');
+  background-size: auto;
+  position: relative;
+  background-repeat: no-repeat;
+  border-radius: 30px;
+  margin-top: 3rem;
+  margin-right: 2rem;
+  margin-left: 2rem;
+}
+
+/* Default height for small devices */
+#intro-example {
+  height: 400px;
+}
+
+/* Height for devices larger than 992px */
+@media (min-width: 992px) {
+  #intro-example {
+    height: 600px;
+  }
+}
+
+.image-text {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(255, 255, 255);
+}
+
+
+h1 {
+  font-size: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgba(255, 255, 255, 0.967);
+}
+
+.mask {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+button {
+  border-radius: 55% 45% 57% 43% / 1% 100% 0% 99%;
+  background-color: linear-gradient(to right, blueviolet, aquamarine);
+  background: linear-gradient(to right, rgb(37, 4, 68), rgb(2, 76, 52));
+  color: rgb(255, 255, 255);
+  width: 150px;
+  height: 75px;
+  font-size: 20px;
+  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  animation: pulsate 2s infinite;
+  transition: transform 0.2s ease-out;
+}
+
+button:hover {
+  font-size: 22px;
+  transform: scale(1.1);
+}
+
+@keyframes pulsate {
+  0% {
+    box-shadow: 0 0 0 0 rgba(185, 101, 254, 0.926);
+  }
+
+  50% {
+    box-shadow: 0 0 0 20px rgba(20, 0, 48, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(11, 1, 86, 0);
+  }
+}
+
+
+
+.Chat-Bot-Img {
+  width: 230px;
+  height: auto;
+  margin-bottom: 11rem;
+}

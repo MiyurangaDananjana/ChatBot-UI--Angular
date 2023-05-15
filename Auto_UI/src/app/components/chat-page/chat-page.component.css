@@ -1,0 +1,20 @@
+.container {
+  margin-top: 3rem;
+}
+
+.element {
+  background-color: #27136e4e;
+  border-radius: 10px;
+}
+
+.element-user {
+  background-color: #27136e2e;
+  border-radius: 10px;
+}
+
+.chat-name, .chat-item{
+  margin-left: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+}
