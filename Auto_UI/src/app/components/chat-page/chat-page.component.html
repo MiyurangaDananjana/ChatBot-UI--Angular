@@ -8,44 +8,47 @@
               <i class="fa fa-comments-o fa-lg me-2"></i>
               <h5 class="mb-0">Chat</h5>
             </div>
-
           </div>
         </div>
         <div class="card-body">
           <ul class="list-unstyled mb-0">
-            <li class="d-flex justify-content-between mb-4">
+            <li *ngFor="let item of messages; let last = last"
+              [ngClass]="{'d-flex': !last, 'justify-content-between': !last, 'mb-4': !last}">
               <div class="chat-item-left element">
+                <div class="chat-avatar">
+                  <div class="chat-name">You</div>
+                </div>
+                <div class="chat-item">{{ item }}</div>
+              </div>
+            </li>
+            <li class="d-flex justify-content-between mb-4" *ngFor="let item of data">
+              <div class="chat-item-left element-user">
                 <div class="chat-avatar">
                   <div class="chat-name">Bot</div>
                 </div>
                 <div class="chat-item">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis
-                  ullamcorper ligula sodales.
+                  <h4>{{ item.name }}</h4>
+                  <p>{{ item.description }}</p>
+                  <h5>Symptoms:</h5>
+                  <ul>
+                    <li *ngFor="let symptom of item.symptoms">{{ symptom }}</li>
+                  </ul>
+                  <h5>Treatments:</h5>
+                  <ul>
+                    <li *ngFor="let treatment of item.treatments">{{ treatment }}</li>
+                  </ul>
                 </div>
               </div>
-
-            </li>
-            <li class="d-flex justify-content-between mb-4">
-              <div class="chat-item-left element-user">
-                <div class="chat-avatar">
-                  <div class="chat-name">User</div>
-                </div>
-                <div class="chat-item">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis
-                  ullamcorper ligula sodales.
-                </div>
-              </div>
-
             </li>
             <li class="mb-4"></li><!-- Add some vertical space between the chat items -->
           </ul>
         </div>
-
         <div class="card-footer bg-white">
           <form>
             <div class="input-group">
-              <input type="text" class="form-control" placeholder="Type your message here...">
-              <button type="submit" class="btn btn-primary">Send</button>
+              <input type="text" class="form-control" [(ngModel)]="message" name="message"
+                placeholder="Type your message here...">
+              <button type="submit" class="btn btn-primary" (click)="sendMessage()">Send</button>
             </div>
           </form>
         </div>
